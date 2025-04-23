@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "title": "Beginning",
+      "description": "How to start a new career.",
+      "date": "2025-01-01",
+      "link": "posts/post-1.html"
+    },
+    {
+      "title": "Consistency",
+      "description": "the key to find success",
+      "date": "2025-01-02",
+      "link": "posts/post-1.html"
+    },
+    {
+      "title": "Starting from 0",
+      "description": "How I'm planning to start my career",
+      "date": "2022-01-03",
+      "link": "posts/post-1.html"
+    }
+  ]
+}
