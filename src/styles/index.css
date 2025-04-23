@@ -228,10 +228,6 @@ button {
   padding: var(--p-2);
   font-size: clamp(0.8rem, 1.5vw, 1rem);
 
-  & > div {
-    flex: 2;
-  }
-
   & .post__section__li-title {
     color: var(--clr-heading-text);
     font-weight: 600;
