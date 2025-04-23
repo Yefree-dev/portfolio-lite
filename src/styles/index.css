@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Cantata+One:wght@400&display=swap");
+
+:root {
+  interpolate-size: allow-keywords;
+  /* fonts */
+  --font-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font-special: Cantata One;
+
+  /* Color variables */
+  --clr-bgk: hsl(0, 0%, 98%);
+  --clr-bgk-50: hsla(0, 0%, 98%, 0.5);
+  --clr-heading-text: hsl(0, 0%, 10%);
+  --clr-base-text: hsl(0, 0%, 28%);
+  --clr-bgk-base-btn: hsl(0, 0%, 85%);
+  --clr-bgk-hover-btn: hsl(0, 0%, 65%);
+  --clr-borders: hsl(0, 0%, 80%);
+
+  /* padding */
+  --p-2: 0.5rem;
+  --p-4: 1rem;
+  --p-6: 1.5rem;
+  --p-8: 2rem;
+
+  /* margin */
+  --m-2: 0.5rem;
+  --m-4: 1rem;
+  --m-6: 1.5rem;
+  --m-8: 2rem;
+
+  /* Component sizes */
+  --body-w: min(100%, 90rem);
+  --header-h: min(100%, 70px);
+  --aside-w: min(100%, 100px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --clr-bgk: hsl(174, 71%, 5%);
+    --clr-bgk-50: hsla(174, 71%, 5%, 0.5);
+    --clr-heading-text: hsl(0, 0%, 100%);
+    --clr-base-text: hsl(0, 0%, 80%);
+    --clr-bgk-base-btn: hsl(0, 0%, 20%);
+    --clr-bgk-hover-btn: hsl(0, 0%, 30%);
+    --clr-borders: hsl(0, 0%, 30%);
+  }
+}
+@view-transition {
+  navigation: auto;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  color-scheme: light dark;
+}
+
+body {
+  --_header-padding: var(--p-2);
+  --_aside-padding: var(--p-6);
+  --_width: calc(var(--aside-w) + var(--_aside-padding));
+  --_height: calc(var(--header-h) + var(--_header-padding));
+
+  position: relative;
+  font-family: var(--font-base);
+  line-height: 1.5;
+
+  background-color: var(--clr-bgk);
+  color: var(--clr-base-text);
+
+  width: var(--body-w);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+  font-family: var(--font-special);
+  color: var(--clr-heading-text);
+}
+
+p {
+  text-wrap: pretty;
+  color: var(--clr-base-text);
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  border: transparent;
+}
+
+.header,
+.aside {
+  position: fixed;
+  /* padding: var(--p-4); */
+  display: flex;
+  background-color: var(--clr-bgk-50);
+  backdrop-filter: blur(10px);
+}
+
+.header {
+  width: 100%;
+  height: var(--_height);
+  padding: var(--_header-padding);
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--clr-borders);
+
+  & h1 {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
+
+#email-form-toggle {
+  padding: var(--p-2);
+  background-color: var(--clr-bgk-base-btn);
+  border-radius: 8px;
+
+  &:hover {
+    background-color: var(--clr-bgk-hover-btn);
+  }
+}
+
+.aside {
+  width: var(--_width);
+  padding: var(--_aside-padding);
+  flex-direction: column;
+  border-right: 1px solid var(--clr-borders);
+  top: var(--_height);
+  bottom: 0;
+}
+
+.header__ul,
+.aside__ul {
+  display: flex;
+
+  & li {
+    padding: var(--p-2);
+    font-style: italic;
+  }
+  & li:hover {
+    text-decoration: underline;
+  }
+}
+
+.aside__ul {
+  flex-direction: column;
+  & li {
+    font-family: var(--font-special);
+  }
+}
+
+.main {
+  padding-top: var(--_height);
+  padding-left: calc(var(--_width) * 1.2);
+  padding-right: var(--p-6);
+  padding-bottom: var(--p-6);
+}
+
+.main__section {
+  margin-block: var(--m-4);
+  width: min(100%, 70ch);
+}
+
+.footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding: var(--p-2);
+  display: grid;
+  place-items: center;
+  font-size: 0.8rem;
+  border-top: 1px solid var(--clr-borders);
+  background-color: var(--clr-bgk);
+  color: hsl(0, 0%, 70%);
+}
+
+/* About page */
+.about__section {
+}
+
+.about__section__article {
+  & p {
+    margin-block: var(--m-4);
+  }
+
+  & a {
+    text-decoration: underline;
+  }
+}
