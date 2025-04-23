@@ -10,10 +10,10 @@
   /* Color variables */
   --clr-bgk: hsl(0, 0%, 98%);
   --clr-bgk-50: hsla(0, 0%, 98%, 0.5);
-  --clr-heading-text: hsl(0, 0%, 10%);
-  --clr-base-text: hsl(0, 0%, 28%);
-  --clr-bgk-base-btn: hsl(0, 0%, 85%);
-  --clr-bgk-hover-btn: hsl(0, 0%, 65%);
+  --clr-heading-text: hsl(0, 0%, 25%);
+  --clr-base-text: hsl(0, 0%, 50%);
+  --clr-bgk-base-btn: hsl(163, 40%, 95%);
+  --clr-bgk-hover-btn: hsl(163, 40%, 90%);
   --clr-borders: hsl(0, 0%, 80%);
 
   /* padding */
@@ -41,7 +41,7 @@
     --clr-heading-text: hsl(0, 0%, 100%);
     --clr-base-text: hsl(0, 0%, 80%);
     --clr-bgk-base-btn: hsl(0, 0%, 20%);
-    --clr-bgk-hover-btn: hsl(0, 0%, 30%);
+    --clr-bgk-hover-btn: hsl(163, 40%, 15%);
     --clr-borders: hsl(0, 0%, 30%);
   }
 }
@@ -130,7 +130,6 @@ button {
 #email-form-toggle {
   padding: var(--p-2);
   background-color: var(--clr-bgk-base-btn);
-  border-radius: 8px;
 
   &:hover {
     background-color: var(--clr-bgk-hover-btn);
@@ -150,12 +149,14 @@ button {
 .aside__ul {
   display: flex;
 
-  & li {
+  & a {
+    display: block;
     padding: var(--p-2);
     font-style: italic;
   }
-  & li:hover {
+  & a:hover {
     text-decoration: underline;
+    color: var(--clr-heading-text);
   }
 }
 
@@ -176,6 +177,11 @@ button {
 .main__section {
   margin-block: var(--m-4);
   width: min(100%, 70ch);
+
+  & h2,
+  & p {
+    margin-left: var(--m-2);
+  }
 }
 
 .footer {
@@ -192,8 +198,6 @@ button {
 }
 
 /* About page */
-.about__section {
-}
 
 .about__section__article {
   & p {
@@ -201,6 +205,47 @@ button {
   }
 
   & a {
+    color: var(--clr-heading-text);
     text-decoration: underline;
+  }
+}
+
+/* Posts page */
+.post__section__ul {
+  margin-block: var(--m-6);
+  display: flex;
+  flex-direction: column;
+}
+
+.post__section__li a {
+  /* background-color: gray; */
+  width: 100%;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  flex-wrap: nowrap;
+  /* gap: var(--m-4); */
+  padding: var(--p-2);
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+
+  & > div {
+    flex: 2;
+  }
+
+  & .post__section__li-title {
+    color: var(--clr-heading-text);
+    font-weight: 600;
+  }
+
+  &:hover {
+    background-color: var(--clr-bgk-hover-btn);
+  }
+
+  & .post__section__li-line {
+    flex: auto;
+    position: relative;
+    height: 1px;
+    background-color: var(--clr-borders);
+    margin-inline: var(--m-4);
   }
 }
