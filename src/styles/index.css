@@ -107,7 +107,6 @@ button {
 .header,
 .aside {
   position: fixed;
-  /* padding: var(--p-4); */
   display: flex;
   background-color: var(--clr-bgk-50);
   backdrop-filter: blur(10px);
@@ -122,7 +121,7 @@ button {
   border-bottom: 1px solid var(--clr-borders);
 
   & h1 {
-    font-size: 1rem;
+    font-size: clamp(0.5rem, 1.5vw, 1.5rem);
     font-weight: 400;
   }
 }
@@ -130,6 +129,25 @@ button {
 #email-form-toggle {
   padding: var(--p-2);
   background-color: var(--clr-bgk-base-btn);
+
+  &:hover {
+    background-color: var(--clr-bgk-hover-btn);
+    color: var(--clr-bgk);
+  }
+}
+
+#menu-toggle {
+  display: none;
+  width: var(--p-8);
+  height: var(--p-8);
+  place-items: center;
+  background-color: var(--clr-bgk-base-btn);
+
+  & svg {
+    color: var(--clr-base-text);
+    width: 100%;
+    height: 100%;
+  }
 
   &:hover {
     background-color: var(--clr-bgk-hover-btn);
@@ -175,6 +193,31 @@ button {
   padding-bottom: var(--p-6);
 }
 
+@media (width <= 36.25rem) {
+  .header {
+    & h1 {
+      display: none;
+    }
+  }
+
+  .aside {
+    transform: translateX(-100%);
+    transition: transform 0.2s ease-in-out;
+
+    &[data-open="true"] {
+      transform: translateX(0);
+    }
+  }
+
+  .main {
+    padding-left: var(--p-4);
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+}
+
 .main__section {
   margin-block: var(--m-4);
   width: min(100%, 65ch);
@@ -182,6 +225,7 @@ button {
   & h2,
   & p {
     margin-left: var(--m-2);
+    margin-bottom: var(--m-2);
   }
 }
 
