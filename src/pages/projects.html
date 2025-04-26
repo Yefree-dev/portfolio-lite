@@ -63,14 +63,28 @@
   </head>
   <body>
     <header class="header">
+      <button id="menu-toggle">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          />
+        </svg>
+      </button>
       <div class="header__title">
         <h1>Yefree's portfolio Lite</h1>
       </div>
       <nav class="header__nav">
         <ul class="header__ul">
-          <li class="header__li"><a href="/">github</a></li>
-          <li class="header__li"><a href="/">linkedIn</a></li>
           <li class="header__li"><a href="/">x</a></li>
+          <li class="header__li"><a href="/">github</a></li>
         </ul>
       </nav>
       <div class="header__button">
@@ -94,32 +108,15 @@
           mobile apps, and have worked with a variety of technologies, including
           React, Node.js, TypeScript, and more.
         </p>
-        <!-- <div>
-          <article class="post__section__articles">
-            <header class="main__articles__header">
-              <img src="" alt="Avatar de Yefree" />
-              <h3>yefrees__portfolio</h3>
-              <p>A while ago</p>
-            </header>
-            <div class="main__articles__body">
-              Primer post de muchos otros 🛠️
-            </div>
-            <footer class="main__articles__footer">
-              <button>Like</button>
-              <button>comment</button>
-            </footer>
-            <div class="main__articles__comments">
-              <div id="comment-0001" class="main__articles__comment">
-                Espero poder ver muchos mas de estos post aquí crack!
-              </div>
-            </div>
-          </article>
-        </div> -->
+        <ul class="post__section__ul" id="project-container">
+          <li>Project-1</li>
+        </ul>
       </section>
     </main>
     <footer class="footer">
       <p>Made by <a href="">Yefree</a> in San Juan, DR.</p>
     </footer>
+    <script src="../scripts/projects.js" defer></script>
     <script src="../scripts/index.js" defer></script>
   </body>
 </html>
