@@ -202,6 +202,12 @@ button {
 
 .about__section__article {
   margin-bottom: var(--m-8);
+
+  & h3 {
+    font-size: 1.2rem;
+    margin-left: var(--m-2);
+  }
+
   & p {
     margin-block: var(--m-4);
   }
@@ -209,6 +215,14 @@ button {
   & a {
     color: var(--clr-heading-text);
     text-decoration: underline;
+  }
+
+  & blockquote {
+    font-style: italic;
+    color: var(--clr-base-text);
+    border-left: 2px solid var(--clr-heading-text);
+    padding-left: var(--p-4);
+    margin-left: var(--m-2);
   }
 }
 
