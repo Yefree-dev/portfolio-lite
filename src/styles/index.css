@@ -31,7 +31,7 @@
   /* Component sizes */
   --body-w: min(100%, 90rem);
   --header-h: min(100%, 70px);
-  --aside-w: min(100%, 100px);
+  --aside-w: min(100%, 120px);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -224,7 +224,7 @@ button {
 
   & h2,
   & p {
-    margin-left: var(--m-2);
+    /* margin-left: var(--m-2); */
     margin-bottom: var(--m-2);
   }
 }
@@ -307,5 +307,28 @@ button {
     height: 1px;
     background-color: var(--clr-borders);
     margin-inline: var(--m-4);
+  }
+}
+
+/* Projects page */
+.projects__container {
+  display: grid;
+  margin-block: var(--m-6);
+  margin-bottom: 15vh;
+}
+
+.projects__container article {
+  margin-block: var(--m-6);
+
+  & p {
+    margin-block: var(--m-4);
+  }
+  & ul {
+    display: flex;
+    gap: var(--m-2);
+  }
+  & li {
+    background-color: hsl(0, 0%, 94%);
+    padding: calc(var(--p-2) / 2.5) var(--p-4);
   }
 }
