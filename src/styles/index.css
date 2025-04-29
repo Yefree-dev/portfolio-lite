@@ -11,8 +11,8 @@
   --clr-bgk: hsl(0, 0%, 98%);
   --clr-bgk-50: hsla(0, 0%, 98%, 0.5);
   --clr-bgk-projects: hsl(0, 0%, 90%);
-  --clr-heading-text: hsl(0, 0%, 25%);
-  --clr-base-text: hsl(0, 0%, 50%);
+  --clr-heading-text: hsl(0, 0%, 20%);
+  --clr-base-text: hsl(0, 0%, 35%);
   --clr-bgk-base-btn: hsl(163, 40%, 95%);
   --clr-bgk-hover-btn: hsl(19, 37%, 60%);
   --clr-borders: hsl(163, 40%, 80%);
@@ -105,6 +105,10 @@ button {
   cursor: pointer;
   color: inherit;
   border: transparent;
+}
+img {
+  max-width: 100%;
+  display: block;
 }
 
 .header,
