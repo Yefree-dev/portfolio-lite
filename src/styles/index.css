@@ -227,14 +227,16 @@ img {
   }
 }
 
-.post__section {
+.main__section {
   margin-block: var(--m-4);
   width: min(100%, 65ch);
 
-  & h2,
-  & p {
-    /* margin-left: var(--m-2); */
-    margin-bottom: var(--m-2);
+  .post__section {
+    & h2,
+    & p {
+      /* margin-left: var(--m-2); */
+      margin-bottom: var(--m-2);
+    }
   }
 }
 
