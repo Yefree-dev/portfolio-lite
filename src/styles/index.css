@@ -10,6 +10,7 @@
   /* Color variables */
   --clr-bgk: hsl(0, 0%, 98%);
   --clr-bgk-50: hsla(0, 0%, 98%, 0.5);
+  --clr-bgk-projects: hsl(0, 0%, 90%);
   --clr-heading-text: hsl(0, 0%, 25%);
   --clr-base-text: hsl(0, 0%, 50%);
   --clr-bgk-base-btn: hsl(163, 40%, 95%);
@@ -37,6 +38,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --clr-bgk: hsl(174, 71%, 5%);
+    --clr-bgk-projects: hsl(163, 40%, 10%);
     --clr-bgk-50: hsla(174, 71%, 5%, 0.5);
     --clr-heading-text: hsl(0, 0%, 100%);
     --clr-base-text: hsl(0, 0%, 80%);
@@ -58,6 +60,7 @@
 html {
   font-size: 100%;
   color-scheme: light dark;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -113,6 +116,7 @@ button {
 }
 
 .header {
+  z-index: 9999;
   width: 100%;
   height: var(--_height);
   padding: var(--_header-padding);
@@ -328,7 +332,7 @@ button {
     gap: var(--m-2);
   }
   & li {
-    background-color: hsl(0, 0%, 94%);
+    background-color: var(--clr-borders);
     padding: calc(var(--p-2) / 2.5) var(--p-4);
   }
 }

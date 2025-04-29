@@ -65,3 +65,27 @@ function changeTabs(currentTab) {
   console.log(currentTabSelected);
   // .setAttribute("aria-hidden", "true");
 }
+
+// Project #2
+
+const board = document.querySelector(".contributions-board");
+
+const activityLevels = [
+  "var(--clr-bgk)", // No commits
+  "#c6e48b", // 1-9 commits
+  "#7bc96f", // 10-19 commits
+  "#239a3b", // 20-29 commits
+  "#196127", // 30+ commits
+];
+
+// Generate 365 days
+for (let i = 0; i < 365; i++) {
+  const day = document.createElement("div");
+
+  // Random level of activity
+  const level = Math.floor(Math.random() * activityLevels.length);
+
+  day.style.backgroundColor = activityLevels[level];
+
+  board.appendChild(day);
+}

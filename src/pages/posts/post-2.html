@@ -57,9 +57,28 @@
     />
     <!-- stylesheet -->
     <link rel="stylesheet" href="../../styles/index.css" />
+    <link rel="stylesheet" href="../../styles/projects.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../scripts/projects.js" defer></script>
+    <script src="../../scripts/index.js" defer></script>
   </head>
   <body>
     <header class="header">
+      <button id="menu-toggle">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          />
+        </svg>
+      </button>
       <div class="header__title">
         <h1>Yefree's portfolio Lite</h1>
       </div>
@@ -101,6 +120,7 @@
             consistent.
           </p>
           <p>And that made all the difference.</p>
+          <canvas id="tinyGainsChart" width="600" height="400"></canvas>
           <p>
             In web development, it’s easy to compare yourself to others — to see
             polished portfolios, senior dev titles, or people launching startups
@@ -117,6 +137,7 @@
                 matters. Small efforts stack up.
               </p>
             </li>
+            <div id="project-2" class="contributions-board"></div>
             <li>
               <h3>2. Repetition Builds Intuition</h3>
               <p>
@@ -158,6 +179,78 @@
     <footer class="footer">
       <p>Made by <a href="">Yefree</a> in San Juan, DR.</p>
     </footer>
-    <!-- <script src="../scripts/index.js" defer></script> -->
+    <script>
+      const days = Array.from({ length: 365 }, (_, i) => i + 1);
+
+      const onePercentBetter = days.map((day) => Math.pow(1.01, day));
+      const onePercentWorse = days.map((day) => Math.pow(0.99, day));
+
+      const ctx = document.getElementById("tinyGainsChart").getContext("2d");
+
+      new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: days,
+          datasets: [
+            {
+              label: "1% Better Every Day",
+              data: onePercentBetter,
+              borderColor: "#95FF79",
+              borderWidth: 1,
+              fill: false,
+              tension: 0.1, // smooth curve
+            },
+            {
+              label: "1% Worse Every Day",
+              data: onePercentWorse,
+              borderColor: "#FE8CAB",
+              borderWidth: 1,
+              fill: false,
+              tension: 0.1,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: "Days",
+              },
+            },
+            y: {
+              title: {
+                display: true,
+                text: "Result",
+              },
+              min: -4,
+            },
+          },
+          plugins: {
+            title: {
+              display: true,
+              text: "The Power of Tiny Gains Over 1 Year",
+              font: {
+                size: 14,
+              },
+            },
+            tooltip: {
+              mode: "index",
+              intersect: false,
+            },
+            legend: {
+              position: "bottom",
+            },
+          },
+          responsive: true,
+          interaction: {
+            mode: "nearest",
+            axis: "x",
+            intersect: false,
+          },
+        },
+      });
+    </script>
   </body>
 </html>
