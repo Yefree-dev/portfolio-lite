@@ -104,7 +104,8 @@ p {
 button {
   cursor: pointer;
   color: inherit;
-  border: transparent;
+  background-color: transparent;
+  border: none;
 }
 img {
   max-width: 100%;
@@ -113,6 +114,7 @@ img {
 
 .header,
 .aside {
+  z-index: 9999;
   position: fixed;
   display: flex;
   background-color: var(--clr-bgk-50);
@@ -120,7 +122,6 @@ img {
 }
 
 .header {
-  z-index: 9999;
   width: 100%;
   height: var(--_height);
   padding: var(--_header-padding);
@@ -226,7 +227,7 @@ img {
   }
 }
 
-.main__section {
+.post__section {
   margin-block: var(--m-4);
   width: min(100%, 65ch);
 
@@ -293,7 +294,7 @@ img {
   flex-wrap: nowrap;
 
   padding: var(--p-2);
-  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
 
   & .post__section__li-title {
     color: var(--clr-heading-text);
