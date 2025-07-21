@@ -1,11 +1,11 @@
 {
   "projects": [
     {
-      "id": "10011",
-      "title": "Project-1",
-      "description": "Description of project-1.",
-      "date": "2025.04.19",
-      "tags": ["HTML", "CSS", "JavaScript"]
+      "title": "QR Code Component",
+      "description": "A QR code component that use smooth transitions with elegant blur to showcase the latest uptakes of the user social networks.",
+      "techs": ["HTML", "CSS", "JavaScript"],
+      "link": "https://github.com/Yefree-dev/web-dev-journey/tree/main/classes-a1/project-a1",
+      "videoSrc": "../../public/videos/qr-component.mp4"
     }
   ]
 }

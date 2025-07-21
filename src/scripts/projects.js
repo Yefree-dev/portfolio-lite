@@ -1,21 +1,22 @@
+const dataUrl = "../data/projects.json";
 const projectsContainer = document.getElementById("projects-container");
 
-const projects = [
-  {
-    title: "QR Code Component",
-    description:
-      "A QR code component that use smooth transitions with elegant blur to showcase the latest uptakes of the user social networks.",
-    techs: ["HTML", "CSS", "JavaScript"],
-    link: "https://github.com/Yefree-dev/web-dev-journey/tree/main/classes-a1/project-a1",
-    videoSrc: "../../public/videos/qr-component.mp4",
-  },
-];
-
-const renderProjects = () => {
-  projectsContainer.innerHTML = projects.map(articleComponent).join("");
-};
-
-window.addEventListener("DOMContentLoaded", renderProjects);
+fetch(dataUrl)
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    return response.json();
+  })
+  .then((data) => {
+    projectsContainer.innerHTML = data.projects
+      .map((project) => articleComponent(project))
+      .join("");
+    console.log(data.posts);
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
 
 const articleComponent = (project) => {
   return `  
