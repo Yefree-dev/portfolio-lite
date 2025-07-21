@@ -342,4 +342,10 @@ img {
     background-color: var(--clr-borders);
     padding: calc(var(--p-2) / 2.5) var(--p-4);
   }
+
+  & video {
+    margin-top: var(--m-4);
+    width: 400px;
+    display: block;
+  }
 }
