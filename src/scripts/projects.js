@@ -26,7 +26,7 @@ const articleComponent = (project) => {
             <ul>
               ${project.techs.map((tech) => `<li>${tech}</li>`).join("")}
             </ul>
-            <video  autoplay muted loop>
+            <video autoplay loop muted playsinline>
                 <source src="${project.videoSrc}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
