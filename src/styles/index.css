@@ -345,7 +345,8 @@ img {
 
   & video {
     margin-top: var(--m-4);
-    width: 400px;
+    width: 100%;
+    max-width: 600px;
     display: block;
   }
 }

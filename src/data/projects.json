@@ -5,7 +5,21 @@
       "description": "A QR code component that use smooth transitions with elegant blur to showcase the latest uptakes of the user social networks.",
       "techs": ["HTML", "CSS", "JavaScript"],
       "link": "https://github.com/Yefree-dev/web-dev-journey/tree/main/classes-a1/project-a1",
-      "videoSrc": "../../public/videos/qr-component.mp4"
+      "videoSrc": "../../public/videos/qr-code-card.mp4"
+    },
+    {
+      "title": "Blog Card",
+      "description": "A card that shows the latest blog posts of the user, with a smooth transition between each post.",
+      "techs": ["HTML", "CSS", "JavaScript"],
+      "link": "https://github.com/Yefree-dev/web-dev-journey/tree/main/classes-a1/project-a2",
+      "videoSrc": "../../public/videos/blog-card.mp4"
+    },
+    {
+      "title": "Social Links Card",
+      "description": "A card that shows the latest social links of the user, with a smooth transition between each link.",
+      "techs": ["HTML", "CSS", "JavaScript"],
+      "link": "https://github.com/Yefree-dev/web-dev-journey/tree/main/classes-a1/project-a3",
+      "videoSrc": "../../public/videos/social-card.mp4"
     }
   ]
 }
